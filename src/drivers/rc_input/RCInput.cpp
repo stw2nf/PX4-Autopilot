@@ -191,6 +191,7 @@ RCInput::fill_rc_in(uint16_t raw_rc_count_local,
 
 	/* fake rssi if no value was provided */
 	if (rssi == -1) {
+#ifdef ADC_RC_RSSI_CHANNEL
 
 		/* set RSSI if analog RSSI input is present */
 		if (_analog_rc_rssi_stable) {
@@ -209,6 +210,10 @@ RCInput::fill_rc_in(uint16_t raw_rc_count_local,
 		} else {
 			_rc_in.rssi = 255;
 		}
+
+#else
+		_rc_in.rssi = 255;
+#endif
 
 	} else {
 		_rc_in.rssi = rssi;
