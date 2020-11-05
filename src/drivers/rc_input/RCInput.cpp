@@ -717,7 +717,7 @@ This module does the RC input parsing and auto-selecting the method. Supported m
 
 	PRINT_MODULE_USAGE_NAME("rc_input", "driver");
 	PRINT_MODULE_USAGE_COMMAND("start");
-	PRINT_MODULE_USAGE_PARAM_STRING('d', "/dev/ttyS3", "<file:dev>", "RC device", true);
+	PRINT_MODULE_USAGE_PARAM_STRING('d', "defined by RC_SERIAL_PORT", "<file:dev>", "RC device", true);
 
 #if defined(SPEKTRUM_POWER)
 	PRINT_MODULE_USAGE_COMMAND_DESCR("bind", "Send a DSM bind command (module must be running)");
